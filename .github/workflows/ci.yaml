@@ -1,6 +1,11 @@
 name: CI
 
-on: push
+on: 
+  push:
+    branches: 
+      - main
+  pull_request: 
+
 
 jobs:
   linting: 
@@ -8,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
-        version: ['3.9', '3.10', '3.11', '3.12']
+        version: ['3.13', '3.14']
     
     steps: 
       - name: code checkout
